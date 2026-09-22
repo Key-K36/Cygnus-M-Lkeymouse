@@ -18,31 +18,26 @@
     combos {
         compatible = "zmk,combos";
 
-        double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
-        };
-
         caps {
-            bindings = <&mt CAPSLOCK TAB>;
+            bindings = <&kp CAPSLOCK>;
             key-positions = <0 1>;
-            layers = <0 2>;
+            layers = <0>;
         };
 
         f7 {
             bindings = <&kp F7>;
-            key-positions = <6 5>;
+            key-positions = <6 7>;
             layers = <0>;
         };
 
         num_remove {
             bindings = <&remove_duplicates>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
             layers = <1>;
         };
 
         num_numlock {
-            bindings = <&mt KP_NUMLOCK TAB>;
+            bindings = <&kp KP_NUMLOCK>;
             key-positions = <1 0>;
             layers = <1>;
         };
