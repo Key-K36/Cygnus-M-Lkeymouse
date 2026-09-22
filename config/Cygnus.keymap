@@ -31,7 +31,231 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        shift_click: shift_crick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&mkp LCLK>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "SHIFT_CRICK";
+        };
+
+        control_click: contolor_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &mkp LCLK>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &mkp LCLK>;
+
+            label = "CONTOLOR_CLICK";
+        };
+
+        sort: transe_row_colum {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(D) &kp S>;
+            label = "TRANSE_ROW_COLUM";
+        };
+
+        remove_duplicates: choufuku {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp A &kp M>;
+            label = "CHOUFUKU";
+        };
+
+        window_hold: window_hold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp W &kp F &kp F>;
+            label = "WINDOW_HOLD";
+        };
+
+        merging_cells: merging_cells {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp H &kp M &kp C>;
+            label = "MERGING_CELLS";
+        };
+
+        paste_formulas_only: paste_formulas_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp S &kp F &kp ENTER>;
+            label = "PASTE_FORMULAS_ONLY";
+        };
+
+        transpose_and_paste: transpose_and_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp S &kp E &kp V &kp ENTER>;
+            label = "TRANSPOSE_AND_PASTE";
+        };
+
+        paste_memo_only: paste_memo_only {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp S &kp C &kp ENTER>;
+            label = "PASTE_MEMO_ONLY";
+        };
+
+        auto_calculation: auto_calculation {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp M &kp X &kp A>;
+            label = "AUTO_CALCULATION";
+        };
+
+        auto_calculation_off: auto_calculation_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT &kp M &kp X &kp M>;
+            label = "AUTO_CALCULATION_OFF";
+        };
+
+        name_change: name_change {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK &kp F2>;
+            label = "NAME_CHANGE";
+        };
+
+        sheet_delete: seet_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E) &kp L &kp ENTER>;
+            label = "SEET_DELETE";
+        };
+
+        double_zero: double_zero {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_NUMBER_0 &kp KP_NUMBER_0>;
+            label = "DOUBLE_ZERO";
+        };
+
+        row_plus: row_plus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(KP_PLUS)>;
+            label = "ROW_PLUS";
+        };
+
+        row_minus: row_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(KP_MINUS)>;
+            label = "ROW_MINUS";
+        };
+
+        colum_plus: colum_plus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(KP_PLUS)>;
+            label = "COLUM_PLUS";
+        };
+
+        colum_minus: colum_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(KP_MINUS)>;
+            label = "COLUM_MINUS";
+        };
+
+        row_copy: row_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(C)>;
+            label = "ROW_COPY";
+        };
+
+        row_cut: row_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(X)>;
+            label = "ROW_CUT";
+        };
+
+        colum_copy: colum_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(C)>;
+            label = "COLUM_COPY";
+        };
+
+        colum_cut: colum_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(X)>;
+            label = "COLUM_CUT";
+        };
+
+        vlookup: vlookup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp I &kp F &kp N &kp A &kp LEFT_PARENTHESIS &kp V &kp L &kp O &kp O &kp K &kp U &kp P &kp LEFT_PARENTHESIS>;
+            label = "VLOOKUP";
+        };
+
+        sumif: sumif {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp LPAR>;
+            label = "SUMIF";
+        };
+
+        sumifs: sumifs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp S &kp LPAR>;
+            label = "SUMIFS";
+        };
+
+        round: round {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp LPAR &kp LPAR>;
+            label = "ROUND";
+        };
+
+        roundup: roundup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp U &kp P &kp LPAR &kp LPAR>;
+            label = "ROUNDUP";
+        };
+
+        rounddown: rounddown {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp D &kp O &kp W &kp N &kp LPAR &kp LPAR>;
+            label = "ROUNDDOWN";
+        };
+
+        sum: sum {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp LPAR>;
+            label = "SUM";
+        };
+
+        sumproduct: sumproduct {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp P &kp R &kp O &kp D &kp U &kp C &kp T &kp LPAR>;
+            label = "SUMPRODUCT";
+        };
     };
+
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -50,6 +274,211 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
+        };
+
+        ht_ctrlclick_shiftclick: ht_ctrlclick_shiftclick {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&control_click>, <&shift_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_CTRLCLICK_SHIFTCLICK";
+        };
+
+        ht_calculation: ht_calculation {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&auto_calculation>, <&auto_calculation_off>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_CALCULATION";
+        };
+
+        ht_kp_vlookup: ht_kp_vlookup {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&vlookup>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_KP_VLOOKUP";
+        };
+
+        ht_sheet_delete_namechange: ht_sheet_delete_namechange {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&sheet_delete>, <&name_change>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <250>;
+            flavor = "balanced";
+            label = "HT_SHEET_DELETE_NAMECHANGE";
+        };
+
+        ht_doublezero_kp: ht_doublezero_kp {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&double_zero>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_DOUBLEZERO_KP";
+        };
+
+        q_tab_morph: q_tab_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Q_TAB_MORPH";
+            bindings = <&kp Q>, <&alt_tab_swapper>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+            keep-mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        tap_rclk: tap_rclk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mkp RCLK>, <&kp F9>, <&kp LC(S)>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_RCLK";
+        };
+
+        tap_paste: tap_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(V))>, <&kp LC(V)>, <&paste_formulas_only>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_PASTE";
+        };
+
+        tap_csclick_paste: tap_csclick_paste {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            label = "TAP_CSCLICK_PASTE";
+            bindings =
+                <&ht_ctrlclick_shiftclick 0 0>,
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
+        };
+
+        tap_enter: tap_enter {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_hold LG(D) LS(ENTER)>,
+                <&mt F12 LA(ENTER)>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ENTER";
+        };
+
+        tap_equal: tap_equal {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&lt 6 EQUAL>, <&sum>, <&sumproduct>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_EQUAL";
+        };
+
+        tap_look: tap_look {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_kp_vlookup LC(LS(RIGHT_ARROW)) 0>,
+                <&sumif>,
+                <&sumifs>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_LOOK";
+        };
+
+        tap_round: tap_round {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&round>, <&roundup>, <&rounddown>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROUND";
+        };
+
+        tap_row_copy_plus: tap_row_copy_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_hold LS(SPACE) LC(PAGE_DOWN)>,
+                <&row_copy>,
+                <&row_plus>,
+                <&kp LA(LS(RIGHT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROW_COPY_PLUS";
+        };
+
+        tap_row_cut_minus: tap_row_cut_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&lt_exit_AML_on_hold 4 LC(PAGE_UP)>,
+                <&row_cut>,
+                <&row_minus>,
+                <&kp LA(LS(LEFT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROW_CUT_MINUS";
+        };
+
+        tap_colum_copy_plus: tap_colum_copy_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&mt_exit_AML_on_hold LC(SPACE) LC(A)>,
+                <&colum_copy>,
+                <&colum_plus>,
+                <&kp LA(LS(RIGHT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_COLUM_COPY_PLUS";
+        };
+
+        tap_colum_cut_minus: tap_colum_cut_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_calculation 0 0>,
+                <&colum_cut>,
+                <&colum_minus>,
+                <&kp LA(LS(LEFT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_COLUM_CUT_MINUS";
+        };
+
+        tap_up: tap_up {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            label = "TAP_UP";
+            bindings = <&mt_exit_AML_on_hold HOME UP_ARROW>, <&kp LG(UP_ARROW)>;
+        };
+
+        tap_down: tap_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            label = "TAP_DOWN";
+            bindings =
+                <&mt_exit_AML_on_hold END DOWN_ARROW>,
+                <&kp LG(DOWN_ARROW)>;
         };
     };
 
