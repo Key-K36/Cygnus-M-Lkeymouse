@@ -130,7 +130,7 @@
         sheet_delete: seet_delete {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(E) &kp L &kp ENTER>;
+            bindings = <&kp LA(E) &kp L>;
             label = "SEET_DELETE";
         };
 
@@ -436,10 +436,10 @@
 
         default_layer {
             bindings = <
-&kp LANG_ZENKAKUHANKAKU  &kp Q     &kp W     &kp E   &kp R          &kp T                                                                   &tap_rclk                   &kp Y                        &kp U  &kp I  &kp O                &kp P
-&kp TAB                  &kp A     &kp S     &kp D   &kp F          &kp G             &mt LG(LS(S)) ESCAPE    &mkp LCLK                     &mt LA(RIGHT) UP_ARROW      &kp H                        &kp J  &kp K  &kp L                &mt RIGHT_BRACKET LEFT_BRACKET
-&kp LSHFT                &kp Z     &kp X     &kp C   &kp V          &kp B             &mt END HOME            &mt LC(PAGE_DOWN) LEFT_ARROW  &mt LA(LEFT) DOWN_ARROW     &mt LC(PAGE_UP) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)   &kp LGUI  &kp LALT  &trans  &kp BACKSPACE  &mt DELETE LC(Z)  &lt 1 SPACE             &lt 1 SPACE                   &mt F2 LANG_ZENKAKUHANKAKU                                             &mt SLASH MINUS      &lt 1 ENTER
+&kp Q                   &kp W           &kp E     &kp R       &kp T          &kp Y                                                                         &tap_rclk                    &tap_rclk                    &kp U  &kp I  &kp O                &kp P
+&kp TAB                 &kp A           &kp S     &kp D       &kp F          &kp G            &mt LG(LS(S)) ESCAPE          &mt LA(RIGHT_ARROW) UP_ARROW   &mt LA(RIGHT) UP_ARROW       &kp H                        &kp J  &kp K  &kp L                &mt RIGHT_BRACKET LEFT_BRACKET
+&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X       &kp C          &kp V            &kp B                         &mt LA(LEFT_ARROW) DOWN_ARROW  &mt LA(LEFT) DOWN_ARROW      &mt LC(PAGE_UP) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
+&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &kp DELETE  &kp BACKSPACE  &lt 1 LC(SPACE)  &mt F2 LANG_ZENKAKUHANKAKU    &mt LC(PAGE_DOWN) LEFT_ARROW   &mt LC(PAGE_UP) RIGHT_ARROW                                             &mt SLASH MINUS      &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
