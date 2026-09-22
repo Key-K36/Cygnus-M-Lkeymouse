@@ -331,16 +331,6 @@
             label = "HT_DOUBLEZERO_KP";
         };
 
-        q_tab_morph: q_tab_morph {
-            compatible = "zmk,behavior-mod-morph";
-            label = "Q_TAB_MORPH";
-            bindings = <&kp Q>, <&alt_tab_swapper>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_RALT)>;
-            keep-mods = <(MOD_LALT|MOD_RALT)>;
-        };
-
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
