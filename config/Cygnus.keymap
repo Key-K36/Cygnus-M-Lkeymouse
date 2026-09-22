@@ -364,7 +364,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt_exit_AML_on_hold LG(D) LS(ENTER)>,
+                <&mt LG(D) LS(ENTER)>,
                 <&mt F12 LA(ENTER)>;
 
             tapping-term-ms = <250>;
@@ -405,7 +405,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt_exit_AML_on_hold LS(SPACE) LC(PAGE_DOWN)>,
+                <&mt LS(SPACE) LC(PAGE_DOWN)>,
                 <&row_copy>,
                 <&row_plus>,
                 <&kp LA(LS(RIGHT_ARROW))>;
@@ -418,7 +418,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&lt_exit_AML_on_hold 4 LC(PAGE_UP)>,
+                <&lt 4 LC(PAGE_UP)>,
                 <&row_cut>,
                 <&row_minus>,
                 <&kp LA(LS(LEFT_ARROW))>;
@@ -431,7 +431,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt_exit_AML_on_hold LC(SPACE) LC(A)>,
+                <&mt LC(SPACE) LC(A)>,
                 <&colum_copy>,
                 <&colum_plus>,
                 <&kp LA(LS(RIGHT_ARROW))>;
@@ -458,7 +458,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             label = "TAP_UP";
-            bindings = <&mt_exit_AML_on_hold HOME UP_ARROW>, <&kp LG(UP_ARROW)>;
+            bindings = <&mt HOME UP_ARROW>, <&kp LG(UP_ARROW)>;
         };
 
         tap_down: tap_down {
@@ -467,7 +467,7 @@
             tapping-term-ms = <250>;
             label = "TAP_DOWN";
             bindings =
-                <&mt_exit_AML_on_hold END DOWN_ARROW>,
+                <&mt END DOWN_ARROW>,
                 <&kp LG(DOWN_ARROW)>;
         };
     };
