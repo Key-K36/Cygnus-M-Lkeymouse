@@ -24,15 +24,9 @@
             layers = <0>;
         };
 
-        f7 {
-            bindings = <&kp F7>;
-            key-positions = <6 7>;
-            layers = <0>;
-        };
-
         num_remove {
             bindings = <&remove_duplicates>;
-            key-positions = <3 4>;
+            key-positions = <3 2>;
             layers = <1>;
         };
 
@@ -44,8 +38,32 @@
 
         merging {
             bindings = <&merging_cells>;
-            key-positions = <40 41>;
+            key-positions = <47 48>;
             layers = <0 1>;
+        };
+
+        f7 {
+            bindings = <&kp F7>;
+            key-positions = <5 4>;
+            layers = <0>;
+        };
+
+        at_sign {
+            bindings = <&kp AT_SIGN>;
+            key-positions = <9 10>;
+            layers = <0>;
+        };
+
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <10 11>;
+            layers = <0>;
+        };
+
+        right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <24 25>;
+            layers = <0>;
         };
     };
 
@@ -309,7 +327,7 @@
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mkp RCLK>, <&kp F9>, <&kp LC(S)>;
+            bindings = <&mkp RCLK>, <&kp LC(C)>, <&kp LC(X)>;
 
             tapping-term-ms = <250>;
             label = "TAP_RCLK";
@@ -318,18 +336,23 @@
         tap_paste: tap_paste {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&kp LC(LS(V))>, <&kp LC(V)>, <&paste_formulas_only>;
+            bindings = <&kp LC(LS(V))>, <&kp LC(V)>;
 
             tapping-term-ms = <250>;
             label = "TAP_PASTE";
         };
 
-        tap_csclick_paste: tap_csclick_paste {
+        tap_paste_sp: tap_paste_sp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
-            label = "TAP_CSCLICK_PASTE";
-            bindings = <&none>, <&transpose_and_paste>, <&paste_memo_only>;
+            label = "TAP_PASTE_SP";
+            bindings =
+                <&kp LC(LS(V))>,
+                <&kp LC(V)>,
+                <&paste_formulas_only>,
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
         };
 
         tap_equal: tap_equal {
@@ -341,16 +364,13 @@
             label = "TAP_EQUAL";
         };
 
-        tap_look: tap_look {
+        tap_lookup: tap_lookup {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings =
-                <&ht_kp_vlookup LC(LS(RIGHT_ARROW)) 0>,
-                <&sumif>,
-                <&sumifs>;
+            bindings = <&vlookup>, <&sumif>, <&sumifs>;
 
             tapping-term-ms = <250>;
-            label = "TAP_LOOK";
+            label = "TAP_LOOKUP";
         };
 
         tap_round: tap_round {
@@ -417,17 +437,32 @@
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             label = "TAP_UP";
-            bindings = <&mt HOME UP_ARROW>, <&kp LG(UP_ARROW)>;
+            bindings =
+                <&mt LA(RIGHT_ARROW) UP_ARROW>,
+                <&kp HOME>,
+                <&kp LG(UP_ARROW)>;
         };
 
         tap_down: tap_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             label = "TAP_DOWN";
-            bindings = <&mt END DOWN_ARROW>, <&kp LG(DOWN_ARROW)>;
+            bindings =
+                <&mt LA(LEFT_ARROW) DOWN_ARROW>,
+                <&kp END>,
+                <&kp LG(DOWN_ARROW)>;
+        };
+
+        tap_scrl: tap_scrl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_SCRL";
+            #binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tapping-term-ms = <200>;
         };
     };
 
@@ -436,10 +471,10 @@
 
         default_layer {
             bindings = <
-&kp Q                   &kp W           &kp E     &kp R       &kp T          &kp Y                                                                         &tap_rclk                    &tap_rclk                    &kp U  &kp I  &kp O                &kp P
-&kp TAB                 &kp A           &kp S     &kp D       &kp F          &kp G            &mt LG(LS(S)) ESCAPE          &mt LA(RIGHT_ARROW) UP_ARROW   &mt LA(RIGHT) UP_ARROW       &kp H                        &kp J  &kp K  &kp L                &mt RIGHT_BRACKET LEFT_BRACKET
-&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X       &kp C          &kp V            &kp B                         &mt LA(LEFT_ARROW) DOWN_ARROW  &mt LA(LEFT) DOWN_ARROW      &mt LC(PAGE_UP) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &kp DELETE  &kp BACKSPACE  &lt 1 LC(SPACE)  &mt F2 LANG_ZENKAKUHANKAKU    &mt LC(PAGE_DOWN) LEFT_ARROW   &mt LC(PAGE_UP) RIGHT_ARROW                                             &mt SLASH MINUS      &lt 1 ENTER
+&kp Q                   &kp W           &kp E     &kp R       &kp T          &kp Y                                                                                 &mkp LCLK                    &tap_rclk  &kp U  &kp I  &kp O             &kp P
+&kp TAB                 &kp A           &kp S     &kp D       &kp F          &kp G                           &mt LG(LS(S)) ESCAPE    &tap_scrl                     &tap_up                      &kp H      &kp J  &kp K  &kp L             &mt SEMICOLON COLON
+&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X       &kp C          &kp V                           &kp B                   &tap_paste_sp                 &tap_down                    &trans     &kp N  &kp M  &mt DOT COMMA     &mt SLASH MINUS
+&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &tap_paste  &kp BACKSPACE  &mt F2 LC(LANG_ZENKAKUHANKAKU)  &lt 1 SPACE             &mt LC(PAGE_DOWN) LEFT_ARROW  &mt LC(PAGE_UP) RIGHT_ARROW                           &mt DELETE LC(Z)  &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
