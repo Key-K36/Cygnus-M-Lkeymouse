@@ -50,7 +50,13 @@
 
         merging {
             bindings = <&merging_cells>;
-            key-positions = <44 45>;
+            key-positions = <13 12>;
+            layers = <1>;
+        };
+
+        sheet_delete {
+            bindings = <&sheet_delete>;
+            key-positions = <45 44>;
             layers = <1>;
         };
     };
@@ -461,10 +467,10 @@
 
         default_layer {
             bindings = <
-&kp Q                                 &kp W           &kp E     &kp R          &kp T        &kp Y                                                                          &mkp LCLK           &tap_rclk                &kp U  &kp I  &kp O                &kp P
-&kp TAB                               &kp A           &kp S     &kp D          &kp F        &kp G                         &mt LG(LS(S)) ESCAPE    &tap_scrl_virtical       &tap_up             &tap_paste               &kp H  &kp J  &kp K                &kp L
-&kp LSHFT                             &kp LEFT_SHIFT  &kp Z     &kp X          &kp C        &kp V                         &kp B                   &mt LS(HOME) LEFT_ARROW  &tap_down           &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LANG_ZENKAKUHANKAKU  &kp LGUI        &kp LALT  &kp BACKSPACE  &lt 1 SPACE  &ht_sheet_delete_kp 0 DELETE  &trans                  &lt 6 LC(PAGE_DOWN)      &mt F2 LC(PAGE_UP)                                         &mt SLASH MINUS      &lt 1 ENTER
+&kp Q                                 &kp W           &kp E     &kp R              &kp T          &kp Y                                                         &mkp LCLK           &tap_rclk                &kp U  &kp I  &kp O                &kp P
+&kp TAB                               &kp A           &kp S     &kp D              &kp F          &kp G        &mt LG(LS(S)) ESCAPE    &tap_scrl_virtical       &tap_up             &tap_paste               &kp H  &kp J  &kp K                &kp L
+&kp LSHFT                             &kp LEFT_SHIFT  &kp Z     &kp X              &kp C          &kp V        &kp B                   &mt LS(HOME) LEFT_ARROW  &tap_down           &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
+&mt LEFT_CONTROL LANG_ZENKAKUHANKAKU  &kp LGUI        &kp LALT  &mt LA(F4) DELETE  &kp BACKSPACE  &lt 1 SPACE  &trans                  &lt 6 LC(PAGE_DOWN)      &mt F2 LC(PAGE_UP)                                         &mt SLASH MINUS      &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -474,8 +480,8 @@
             bindings = <
 &mt KP_NUMLOCK F9  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                      &trans                &trans              &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
 &tap_lookup        &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt PERCENT ASTERISK            &mt AMPERSAND SLASH                 &trans        &tap_scrl_horizontal  &tap_colum_cut_minus  &tap_paste_sp       &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp RIGHT_BRACKET
-&tap_round         &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &mt LC(PLUS) PLUS               &mt LC(MINUS) MINUS                 &tap_equal    &tap_row_cut_minus    &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &trans
-&trans             &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &trans                          &trans                              &trans        &trans                &trans                                                                           &kp GRAVE              &trans
+&tap_round         &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &mt LC(PLUS) PLUS               &mt LC(MINUS) MINUS                 &tap_equal    &tap_row_cut_minus    &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &kp GRAVE
+&trans             &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &trans                          &trans                              &trans        &trans                &trans                                                                           &trans                 &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
