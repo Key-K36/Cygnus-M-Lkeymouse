@@ -42,21 +42,27 @@
             layers = <1>;
         };
 
+        numlock {
+            bindings = <&mt KP_NUMLOCK LC(KP_NUMBER_1)>;
+            key-positions = <0 1>;
+            layers = <1>;
+        };
+
         win_hold {
             bindings = <&window_hold>;
-            key-positions = <0 1>;
+            key-positions = <13 12>;
             layers = <1>;
         };
 
         merging {
             bindings = <&merging_cells>;
-            key-positions = <13 12>;
+            key-positions = <27 26>;
             layers = <1>;
         };
 
         sheet_delete {
             bindings = <&sheet_delete>;
-            key-positions = <45 44>;
+            key-positions = <45 44 46>;
             layers = <1>;
         };
     };
@@ -341,7 +347,7 @@
         tap_equal: tap_equal {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mt LC(KP_NUMBER_1) EQUAL>, <&sum>, <&sumproduct>;
+            bindings = <&mt DOUBLE_QUOTES EQUAL>, <&sum>, <&sumproduct>;
 
             tapping-term-ms = <250>;
             label = "TAP_EQUAL";
@@ -350,7 +356,11 @@
         tap_lookup: tap_lookup {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mt DOUBLE_QUOTES F4>, <&vlookup>, <&sumif>, <&sumifs>;
+            bindings =
+                <&mt LC(KP_PLUS) KP_PLUS>,
+                <&vlookup>,
+                <&sumif>,
+                <&sumifs>;
 
             tapping-term-ms = <250>;
             label = "TAP_LOOKUP";
@@ -360,7 +370,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt LEFT_SHIFT BACKSLASH>,
+                <&mt RC(MINUS) MINUS>,
                 <&roundup>,
                 <&rounddown>,
                 <&round>;
@@ -386,7 +396,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&sort>,
+                <&ht_calculation 0 0>,
                 <&row_cut>,
                 <&row_minus>,
                 <&kp LA(LS(LEFT_ARROW))>;
@@ -412,7 +422,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&ht_calculation 0 0>,
+                <&sort>,
                 <&colum_cut>,
                 <&colum_minus>,
                 <&kp LA(LS(LEFT_ARROW))>;
@@ -478,10 +488,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt KP_NUMLOCK F9  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                      &trans                &trans              &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
-&tap_lookup        &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt PERCENT ASTERISK            &mt AMPERSAND SLASH                 &trans        &tap_scrl_horizontal  &tap_colum_cut_minus  &tap_paste_sp       &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp RIGHT_BRACKET
-&tap_round         &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &mt LC(PLUS) PLUS               &mt LC(MINUS) MINUS                 &tap_equal    &tap_row_cut_minus    &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &kp GRAVE
-&trans             &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &trans                          &trans                              &trans        &trans                &trans                                                                           &trans                 &trans
+&mt F9 BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                      &trans                &trans              &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
+&mt F4 DOLLAR     &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &tap_scrl_horizontal  &tap_colum_cut_minus  &tap_paste_sp       &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp RIGHT_BRACKET
+&trans            &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                     &tap_round                          &tap_equal    &tap_row_cut_minus    &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &kp GRAVE
+&trans            &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &trans                          &trans                              &trans        &trans                &trans                                                                           &trans                 &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
