@@ -336,8 +336,8 @@
             tapping-term-ms = <250>;
             label = "TAP_PASTE";
             bindings =
-                <&kp LC(LS(V))>,
-                <&kp LC(V)>,
+                <&mkp RCLK>,
+                <&mt LC(V) LC(LS(V))>,
                 <&paste_formulas_only>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
@@ -469,10 +469,10 @@
 
         default_layer {
             bindings = <
-&kp Q                   &kp W           &kp E     &kp R              &kp T             &kp Y                                                                    &mkp LCLK                  &tap_rclk                           &kp U  &kp I  &kp O                &kp P
-&kp TAB                 &kp A           &kp S     &kp D              &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LA(RIGHT_ARROW) LA(LEFT_ARROW)  &tap_up                    &kp H                               &kp J  &kp K  &kp L                &mt SLASH MINUS
-&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X              &kp C             &kp V        &kp B                   &ht_scrl_kp SCRL_LEFT LEFT_ARROW    &tap_down                  &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &mt LA(F4) DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &mt LS(HOME) LC(PAGE_UP)            &mt LS(END) LC(PAGE_DOWN)                                                    &lt 6 LA(GRAVE)      &lt 1 ENTER
+&kp Q                   &kp W           &kp E     &kp R                &kp T             &kp Y                                                                    &mkp LCLK                  &tap_rclk                           &kp U  &kp I  &kp O                &kp P
+&kp TAB                 &kp A           &kp S     &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LA(RIGHT_ARROW) LA(LEFT_ARROW)  &tap_up                    &kp H                               &kp J  &kp K  &kp L                &mt SLASH MINUS
+&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X                &kp C             &kp V        &kp B                   &ht_scrl_kp SCRL_LEFT LEFT_ARROW    &tap_down                  &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
+&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &mt LS(HOME) LC(PAGE_UP)            &mt LS(END) LC(PAGE_DOWN)                                                    &lt 6 LA(GRAVE)      &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
