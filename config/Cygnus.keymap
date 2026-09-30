@@ -18,12 +18,6 @@
     combos {
         compatible = "zmk,combos";
 
-        caps {
-            bindings = <&mt CAPSLOCK LA(GRAVE)>;
-            key-positions = <0 1>;
-            layers = <0>;
-        };
-
         f7 {
             bindings = <&kp F7>;
             key-positions = <5 4>;
@@ -322,12 +316,13 @@
             label = "TAP_RCLK";
         };
 
-        tap: tap {
+        tap_calcu_sort: tap_calcu_sort {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&ht_calculation 0 0>, <&sort>;
+
             tapping-term-ms = <250>;
-            label = "TAP";
+            label = "TAP_CALCU_SORT";
         };
 
         tap_paste: tap_paste {
@@ -382,7 +377,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt LS(SPACE) LC(LS(RIGHT_ARROW))>,
+                <&mt LS(SPACE) RIGHT_ARROW>,
                 <&row_copy>,
                 <&row_plus>,
                 <&kp LA(LS(RIGHT_ARROW))>;
@@ -395,7 +390,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&ht_calculation 0 0>,
+                <&kp LEFT_ARROW>,
                 <&row_cut>,
                 <&row_minus>,
                 <&kp LA(LS(LEFT_ARROW))>;
@@ -408,7 +403,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&mt LC(SPACE) LC(LS(DOWN_ARROW))>,
+                <&mt LC(SPACE) DOWN_ARROW>,
                 <&colum_copy>,
                 <&colum_plus>,
                 <&kp LA(LS(RIGHT_ARROW))>;
@@ -421,7 +416,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&sort>,
+                <&kp UP_ARROW>,
                 <&colum_cut>,
                 <&colum_minus>,
                 <&kp LA(LS(LEFT_ARROW))>;
@@ -469,10 +464,10 @@
 
         default_layer {
             bindings = <
-&kp Q                   &kp W           &kp E     &kp R                &kp T             &kp Y                                                                    &mkp LCLK                  &tap_rclk                           &kp U  &kp I  &kp O                &kp P
-&kp TAB                 &kp A           &kp S     &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LA(RIGHT_ARROW) LA(LEFT_ARROW)  &tap_up                    &kp H                               &kp J  &kp K  &kp L                &mt SLASH MINUS
-&kp LSHFT               &kp LEFT_SHIFT  &kp Z     &kp X                &kp C             &kp V        &kp B                   &ht_scrl_kp SCRL_LEFT LEFT_ARROW    &tap_down                  &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)  &kp LGUI        &kp LALT  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &mt LS(HOME) LC(PAGE_UP)            &mt LS(END) LC(PAGE_DOWN)                                                    &lt 6 LA(GRAVE)      &lt 1 ENTER
+&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                                  &tap_rclk                  &kp Y                               &kp U  &kp I  &kp O                &kp P
+&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mkp LCLK                         &tap_up                    &kp H                               &kp J  &kp K  &kp L                &mt LS(MINUS) MINUS
+&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &kp B                   &ht_scrl_kp SCRL_LEFT LEFT_ARROW  &tap_down                  &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
+&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &mt LS(HOME) LC(PAGE_UP)          &mt LS(END) LC(PAGE_DOWN)                                                    &lt 6 SLASH          &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -480,10 +475,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                    &trans                &tap_paste          &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
+&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                    &tap_paste            &tap_calcu_sort     &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
 &mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans              &tap_colum_cut_minus  &mt LC(S) F9        &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp RIGHT_BRACKET
 &trans                      &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_row_cut_minus  &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &kp GRAVE
-&trans                      &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &trans              &trans                                                                           &trans                 &trans
+&mt LC(LEFT_SHIFT) LC(C)    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                                                              &trans                 &trans
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
