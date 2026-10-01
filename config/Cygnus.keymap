@@ -457,6 +457,28 @@
             flavor = "balanced";
             label = "HT_SCRL_KP";
         };
+
+        tap_left: tap_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            label = "TAP_LEFT";
+            bindings =
+                <&mt LS(HOME) LEFT_ARROW>,
+                <&kp LA(LEFT_ARROW)>,
+                <&kp LG(LEFT_ARROW)>;
+        };
+
+        tap_right: tap_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            label = "TAP_RIGHT";
+            bindings =
+                <&mt LS(END) RIGHT_ARROW>,
+                <&kp LA(RIGHT_ARROW)>,
+                <&kp LG(RIGHT_ARROW)>;
+        };
     };
 
     keymap {
