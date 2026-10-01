@@ -486,10 +486,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                                   &tap_rclk                             &kp Y                    &kp U  &kp I  &kp O                &kp P
-&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mkp LCLK                          &tap_up                               &kp H                    &kp J  &kp K  &kp L                &mt LS(MINUS) MINUS
-&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &kp B                   &mt LS(HOME) LEFT_ARROW            &tap_down                             &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &ht_scrl_kp SCRL_LEFT LC(PAGE_UP)  &ht_scrl_kp SCRL_RIGHT LC(PAGE_DOWN)                                         &lt 6 SLASH          &lt 1 ENTER
+&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                                   &kp Y                                 &kp U  &kp I          &kp O      &kp P      &mt RS(MINUS) MINUS
+&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &trans                             &kp H                                 &kp J  &kp K          &kp L      &mkp LCLK  &tap_rclk
+&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &lt 6 B                 &lt 1 ENTER                        &kp N                                 &kp M  &mt DOT COMMA  &tap_left  &tap_up    &tap_right
+&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &ht_scrl_kp SCRL_LEFT LC(PAGE_UP)  &ht_scrl_kp SCRL_RIGHT LC(PAGE_DOWN)                                   &tap_down  &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -497,10 +497,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                    &tap_paste            &tap_calcu_sort     &kp APOSTROPHE   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET
-&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans              &tap_colum_cut_minus  &mt LC(S) F9        &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp RIGHT_BRACKET
-&trans                      &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_row_cut_minus  &tap_colum_copy_plus  &tap_row_copy_plus  &kp EXCLAMATION  &kp DOUBLE_QUOTES     &kp POUND              &kp GRAVE
-&mt LC(LEFT_SHIFT) LC(C)    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                                                              &trans                 &trans
+&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                        &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mt SEMICOLON LEFT_BRACKET  &trans                &trans
+&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans  &kp DOLLAR        &mt LC(S) F9          &kp PERCENT            &mt COLON RIGHT_BRACKET     &trans                &tap_paste
+&trans                      &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &trans  &kp EXCLAMATION   &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus          &tap_colum_cut_minus  &tap_row_copy_plus
+&mt LC(LEFT_SHIFT) LC(C)    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &tap_calcu_sort                     &trans        &trans  &trans                                                                                     &tap_colum_copy_plus  &mt LC(S) F9
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
