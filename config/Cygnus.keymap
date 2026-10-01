@@ -428,7 +428,7 @@
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             label = "TAP_UP";
             bindings =
                 <&ht_scrl_kp SCRL_UP UP_ARROW>,
@@ -439,7 +439,7 @@
         tap_down: tap_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             label = "TAP_DOWN";
             bindings =
                 <&ht_scrl_kp SCRL_DOWN DOWN_ARROW>,
@@ -452,8 +452,8 @@
             bindings = <&msc>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             label = "HT_SCRL_KP";
         };
@@ -464,10 +464,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                                  &tap_rclk                  &kp Y                               &kp U  &kp I  &kp O                &kp P
-&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mkp LCLK                         &tap_up                    &kp H                               &kp J  &kp K  &kp L                &mt LS(MINUS) MINUS
-&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &kp B                   &ht_scrl_kp SCRL_LEFT LEFT_ARROW  &tap_down                  &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
-&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &mt LS(HOME) LC(PAGE_UP)          &mt LS(END) LC(PAGE_DOWN)                                                    &lt 6 SLASH          &lt 1 ENTER
+&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                                   &tap_rclk                             &kp Y                    &kp U  &kp I  &kp O                &kp P
+&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mkp LCLK                          &tap_up                               &kp H                    &kp J  &kp K  &kp L                &mt LS(MINUS) MINUS
+&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &kp B                   &mt LS(HOME) LEFT_ARROW            &tap_down                             &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &mt SEMICOLON COMMA  &mt COLON DOT
+&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &ht_scrl_kp SCRL_LEFT LC(PAGE_UP)  &ht_scrl_kp SCRL_RIGHT LC(PAGE_DOWN)                                         &lt 6 SLASH          &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
