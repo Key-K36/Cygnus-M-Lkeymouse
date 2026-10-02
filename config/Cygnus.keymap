@@ -25,7 +25,7 @@
         };
 
         atsign_f12 {
-            bindings = <&mt F12 AT_SIGN>;
+            bindings = <&kp F12>;
             key-positions = <10 11>;
             layers = <0>;
         };
@@ -37,7 +37,7 @@
         };
 
         numlock {
-            bindings = <&mt KP_NUMLOCK LA(GRAVE)>;
+            bindings = <&kp KP_NUMLOCK>;
             key-positions = <0 1>;
             layers = <1>;
         };
@@ -422,10 +422,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_UP";
-            bindings =
-                <&ht_scrl_kp SCRL_UP UP_ARROW>,
-                <&kp HOME>,
-                <&kp LG(UP_ARROW)>;
+            bindings = <&ht_scrl_kp SCRL_UP UP_ARROW>, <&kp HOME>;
         };
 
         tap_down: tap_down {
@@ -433,10 +430,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_DOWN";
-            bindings =
-                <&ht_scrl_kp SCRL_DOWN DOWN_ARROW>,
-                <&kp END>,
-                <&kp LG(DOWN_ARROW)>;
+            bindings = <&ht_scrl_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
         };
 
         ht_scrl_kp: ht_scrl_kp {
@@ -450,48 +444,22 @@
             label = "HT_SCRL_KP";
         };
 
-        tap_left_mouse: tap_left_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_LEFT_MOUSE";
-            bindings =
-                <&ht_scrl_kp SCRL_LEFT LEFT_ARROW>,
-                <&kp LA(LEFT_ARROW)>,
-                <&kp LG(LEFT_ARROW)>;
-        };
-
-        tap_right_mouse: tap_right_mouse {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_RIGHT_MOUSE";
-            bindings =
-                <&ht_scrl_kp SCRL_RIGHT RIGHT_ARROW>,
-                <&kp LA(RIGHT_ARROW)>,
-                <&kp LG(RIGHT_ARROW)>;
-        };
-
         tap_left: tap_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             label = "TAP_LEFT";
-            bindings =
-                <&mt LS(HOME) LEFT_ARROW>,
-                <&kp LC(PAGE_UP)>,
-                <&kp LG(LEFT_ARROW)>;
+            bindings = <&ht_scrl_kp SCRL_LEFT LEFT_ARROW>, <&kp LA(LEFT_ARROW)>;
         };
 
         tap_right: tap_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             label = "TAP_RIGHT";
             bindings =
-                <&mt LS(END) RIGHT_ARROW>,
-                <&kp LC(PAGE_DOWN)>,
-                <&kp LG(RIGHT_ARROW)>;
+                <&ht_scrl_kp SCRL_RIGHT RIGHT_ARROW>,
+                <&kp LA(RIGHT_ARROW)>;
         };
     };
 
@@ -500,10 +468,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                               &kp Y       &kp U  &kp I      &kp O    &kp P         &mt RS(MINUS) MINUS
-&kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LG(UP_ARROW) UP_ARROW      &kp H       &kp J  &kp K      &kp L    &kp SEMI      &kp LEFT_BRACKET
-&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &lt 6 B                 &mt LG(DOWN_ARROW) DOWN_ARROW  &kp N       &kp M  &kp COMMA  &kp DOT  &kp SLASH     &kp RIGHT_BRACKET
-&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &tap_left                      &tap_right                             &name_change  &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q         &kp W         &kp E          &kp R          &kp T                                                    &kp Y                    &kp U  &kp I      &kp O    &mt AT_SIGN P  &mt RS(MINUS) MINUS
+&kp TAB                 &kp A         &kp S         &kp D          &kp F          &kp G        &kp ESCAPE         &trans                   &kp H                    &kp J  &kp K      &kp L    &kp SEMI       &kp LEFT_BRACKET
+&kp LSHFT               &kp Z         &kp X         &kp C          &kp V          &kp B        &lt 6 LG(LS(S))    &mt UP_ARROW DOWN_ARROW  &kp N                    &kp M  &kp COMMA  &kp DOT  &kp SLASH      &kp RIGHT_BRACKET
+&mt LEFT_CONTROL LC(C)  &kp LEFT_GUI  &kp LEFT_ALT  &mt F2 DELETE  &kp BACKSPACE  &lt 1 SPACE  &trans             &mt LS(HOME) LEFT_ARROW  &mt LS(END) RIGHT_ARROW                             &name_change   &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -511,10 +479,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                      &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK        &tap_up          &tap_rclk
-&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &tap_colum_cut_minus  &kp DOLLAR              &kp PERCENT           &kp AMPERSAND          &tap_left_mouse  &tap_down        &tap_right_mouse
-&kp LC(LEFT_SHIFT)          &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_colum_copy_plus  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans           &trans           &trans
-&trans                      &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &tap_row_cut_minus    &tap_row_copy_plus                                                                    &tap_calcu_sort  &mt LC(S) F9
+&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                      &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK  &tap_up          &tap_rclk
+&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &tap_colum_cut_minus  &kp DOLLAR              &kp PERCENT           &kp AMPERSAND          &tap_left  &tap_down        &tap_right
+&kp LC(LEFT_SHIFT)          &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_colum_copy_plus  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans     &trans           &trans
+&trans                      &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &tap_row_cut_minus    &tap_row_copy_plus                                                              &tap_calcu_sort  &mt LC(S) F9
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
