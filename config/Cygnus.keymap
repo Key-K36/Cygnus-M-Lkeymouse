@@ -503,7 +503,7 @@
 &mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                               &kp Y       &kp U  &kp I      &kp O    &kp P             &mt RS(MINUS) MINUS
 &kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LG(UP_ARROW) UP_ARROW      &kp H       &kp J  &kp K      &kp L    &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &lt 6 B                 &mt LG(DOWN_ARROW) DOWN_ARROW  &kp N       &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON     &kp SLASH
-&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &name_change            &tap_left                      &tap_right                             &trans            &lt 1 ENTER
+&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &trans                  &tap_left                      &tap_right                             &name_change      &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
