@@ -502,8 +502,8 @@
             bindings = <
 &mt CAPSLOCK LA(GRAVE)  &kp Q               &kp W         &kp E                &kp R             &kp T                                                               &kp Y       &kp U  &kp I      &kp O    &kp P             &mt RS(MINUS) MINUS
 &kp TAB                 &kp A               &kp S         &kp D                &kp F             &kp G        &mt LG(LS(S)) ESCAPE    &mt LG(UP_ARROW) UP_ARROW      &kp H       &kp J  &kp K      &kp L    &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &lt 6 B                 &mt LG(DOWN_ARROW) DOWN_ARROW  &kp N       &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON     &kp COLON
-&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &name_change            &tap_left                      &tap_right                             &kp SLASH         &lt 1 ENTER
+&kp LSHFT               &kp LEFT_SHIFT      &kp Z         &kp X                &kp C             &kp V        &lt 6 B                 &mt LG(DOWN_ARROW) DOWN_ARROW  &kp N       &kp M  &kp COMMA  &kp DOT  &kp SEMICOLON     &kp SLASH
+&mt LEFT_CONTROL LC(C)  &kp LC(LEFT_SHIFT)  &kp LEFT_GUI  &mt LEFT_ALT DELETE  &mt F2 BACKSPACE  &lt 1 SPACE  &name_change            &tap_left                      &tap_right                             &trans            &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -511,10 +511,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                      &kp SINGLE_QUOTE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK        &tap_up          &tap_rclk
-&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &tap_colum_cut_minus  &kp DOLLAR          &kp PERCENT           &kp AMPERSAND          &tap_left_mouse  &tap_down        &tap_right_mouse
-&trans                      &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_colum_copy_plus  &kp EXCLAMATION     &kp DOUBLE_QUOTES     &kp POUND              &trans           &trans           &trans
-&mt LC(LEFT_SHIFT) LC(C)    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &tap_row_cut_minus    &tap_row_copy_plus                                                                &tap_calcu_sort  &mt LC(S) F9
+&mt LC(NUMBER_1) BACKSLASH  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9            &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                      &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK        &tap_up          &tap_rclk
+&mt F4 DOLLAR               &kp KP_NUMBER_4                  &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &tap_colum_cut_minus  &kp DOLLAR              &kp PERCENT           &kp AMPERSAND          &tap_left_mouse  &tap_down        &tap_right_mouse
+&trans                      &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_colum_copy_plus  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans           &trans           &trans
+&mt LC(LEFT_SHIFT) LC(C)    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &tap_row_cut_minus    &tap_row_copy_plus                                                                    &tap_calcu_sort  &mt LC(S) F9
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
