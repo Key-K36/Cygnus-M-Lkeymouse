@@ -329,6 +329,17 @@
             label = "HT_SHEET_DELETE_KP";
         };
 
+        ht_namechange_kp: ht_namechange_kp {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&name_change>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
+            flavor = "balanced";
+            label = "HT_NAMECHANGE_KP";
+        };
+
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -336,6 +347,81 @@
 
             tapping-term-ms = <200>;
             label = "TAP_RCLK";
+        };
+
+        tap_up: tap_up {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_UP";
+            bindings = <&lt 5 UP_ARROW>, <&kp HOME>;
+        };
+
+        tap_down: tap_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_DOWN";
+            bindings = <&ht_namechange_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
+        };
+
+        tap_left: tap_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_LEFT";
+            bindings =
+                <&mt LA(LEFT_ARROW) LEFT_ARROW>,
+                <&shift_click>,
+                <&control_click>;
+        };
+
+        tap_right: tap_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_RIGHT";
+            bindings =
+                <&mt LA(RIGHT_ARROW) RIGHT_ARROW>,
+                <&paste_formulas_only>,
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
+        };
+
+        tap_row_copy_plus: tap_row_copy_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&row_copy>, <&row_plus>, <&kp LA(LS(RIGHT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROW_COPY_PLUS";
+        };
+
+        tap_row_cut_minus: tap_row_cut_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&row_cut>, <&row_minus>, <&kp LA(LS(LEFT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROW_CUT_MINUS";
+        };
+
+        tap_colum_copy_plus: tap_colum_copy_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&colum_copy>, <&colum_plus>, <&kp LA(LS(RIGHT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_COLUM_COPY_PLUS";
+        };
+
+        tap_colum_cut_minus: tap_colum_cut_minus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&colum_cut>, <&colum_minus>, <&kp LA(LS(LEFT_ARROW))>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_COLUM_CUT_MINUS";
         };
 
         tap_calcu_sort: tap_calcu_sort {
@@ -380,92 +466,6 @@
 
             tapping-term-ms = <250>;
             label = "TAP_ROUND";
-        };
-
-        tap_row_copy_plus: tap_row_copy_plus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&row_copy>, <&row_plus>, <&kp LA(LS(RIGHT_ARROW))>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_ROW_COPY_PLUS";
-        };
-
-        tap_row_cut_minus: tap_row_cut_minus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&row_cut>, <&row_minus>, <&kp LA(LS(LEFT_ARROW))>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_ROW_CUT_MINUS";
-        };
-
-        tap_colum_copy_plus: tap_colum_copy_plus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&colum_copy>, <&colum_plus>, <&kp LA(LS(RIGHT_ARROW))>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_COLUM_COPY_PLUS";
-        };
-
-        tap_colum_cut_minus: tap_colum_cut_minus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&colum_cut>, <&colum_minus>, <&kp LA(LS(LEFT_ARROW))>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_COLUM_CUT_MINUS";
-        };
-
-        tap_up: tap_up {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_UP";
-            bindings = <&lt 5 UP_ARROW>, <&kp HOME>;
-        };
-
-        tap_down: tap_down {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_DOWN";
-            bindings = <&ht_namechange_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
-        };
-
-        ht_namechange_kp: ht_namechange_kp {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&name_change>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
-            flavor = "balanced";
-            label = "HT_NAMECHANGE_KP";
-        };
-
-        tap_left: tap_left {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_LEFT";
-            bindings =
-                <&mt LA(LEFT_ARROW) LEFT_ARROW>,
-                <&shift_click>,
-                <&control_click>;
-        };
-
-        tap_right: tap_right {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_RIGHT";
-            bindings =
-                <&mt LA(RIGHT_ARROW) RIGHT_ARROW>,
-                <&paste_formulas_only>,
-                <&transpose_and_paste>,
-                <&paste_memo_only>;
         };
     };
 
