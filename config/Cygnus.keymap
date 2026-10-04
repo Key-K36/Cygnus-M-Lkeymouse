@@ -28,7 +28,7 @@
         f12 {
             bindings = <&kp F12>;
             key-positions = <27 28>;
-            layers = <0>;
+            layers = <1>;
         };
 
         remove_duplicates {
@@ -286,7 +286,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <250>;
             flavor = "balanced";
             label = "HT_CALCULATION";
         };
@@ -297,7 +297,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <250>;
             flavor = "balanced";
             label = "HT_SHEET_DELETE_KP";
         };
@@ -399,28 +399,28 @@
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             label = "TAP_UP";
-            bindings = <&ht_scrl_kp SCRL_UP UP_ARROW>, <&kp HOME>;
+            bindings = <&lt 5 UP_ARROW>, <&kp HOME>;
         };
 
         tap_down: tap_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             label = "TAP_DOWN";
-            bindings = <&ht_scrl_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
+            bindings = <&ht_namechange_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
         };
 
-        ht_scrl_kp: ht_scrl_kp {
+        ht_namechange_kp: ht_namechange_kp {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&msc>, <&kp>;
+            bindings = <&name_change>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <250>;
             flavor = "balanced";
-            label = "HT_SCRL_KP";
+            label = "HT_NAMECHANGE_KP";
         };
     };
 
@@ -440,10 +440,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &mt F9 KP_NUMBER_9         &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                                &mt GRAVE SINGLE_QUOTE             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK                         &tap_up               &tap_rclk
-&trans                    &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans                          &mt DOLLAR BACKSLASH               &kp PERCENT           &kp AMPERSAND          &ht_scrl_kp SCRL_LEFT LEFT_ARROW  &tap_down             &ht_scrl_kp SCRL_RIGHT RIGHT_ARROW
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort                 &kp EXCLAMATION                    &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus                &tap_colum_cut_minus  &tap_row_copy_plus
-&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                                                                 &tap_colum_copy_plus  &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &mt F9 KP_NUMBER_9         &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                                &mt GRAVE SINGLE_QUOTE             &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK                      &tap_up               &tap_rclk
+&trans                    &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans                          &mt DOLLAR BACKSLASH               &kp PERCENT           &kp AMPERSAND          &mt LA(LEFT_ARROW) LEFT_ARROW  &tap_down             &mt LA(RIGHT_ARROW) RIGHT_ARROW
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort                 &kp EXCLAMATION                    &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus             &tap_colum_cut_minus  &tap_row_copy_plus
+&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                                                              &tap_colum_copy_plus  &mt LC(S) LC(Z)
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
@@ -467,7 +467,7 @@
             >;
         };
 
-        SCROLL {
+        layer_4 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -476,7 +476,7 @@
             >;
         };
 
-        layer_5 {
+        SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
