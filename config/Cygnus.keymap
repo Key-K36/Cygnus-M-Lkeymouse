@@ -328,21 +328,21 @@
             label = "HT_SHEET_DELETE_KP";
         };
 
-        ht_namechange_kp: ht_namechange_kp {
+        ht_sc_rmkp: ht_sc_rmkp {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&name_change>, <&kp>;
+            bindings = <&name_change>, <&mkp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
-            label = "HT_NAMECHANGE_KP";
+            label = "HT_SC_RMKP";
         };
 
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mkp RCLK>, <&kp LC(LS(V))>, <&kp LC(V)>;
+            bindings = <&ht_sc_rmkp 0 RCLK>, <&control_click>, <&name_change>;
 
             tapping-term-ms = <200>;
             label = "TAP_RCLK";
@@ -361,7 +361,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_DOWN";
-            bindings = <&ht_namechange_kp SCRL_DOWN DOWN_ARROW>, <&kp END>;
+            bindings = <&mt LC(LS(DOWN_ARROW)) DOWN_ARROW>, <&kp END>;
         };
 
         tap_left: tap_left {
@@ -369,10 +369,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_LEFT";
-            bindings =
-                <&mt LA(LEFT_ARROW) LEFT_ARROW>,
-                <&shift_click>,
-                <&control_click>;
+            bindings = <&mt LA(LEFT_ARROW) LEFT_ARROW>, <&mt LC(V) LC(LS(V))>;
         };
 
         tap_right: tap_right {
