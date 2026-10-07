@@ -330,7 +330,7 @@
 
         ht_sc_rmkp: ht_sc_rmkp {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&name_change>, <&mkp>;
+            bindings = <&shift_click>, <&mkp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -378,7 +378,7 @@
             tapping-term-ms = <200>;
             label = "TAP_RIGHT";
             bindings =
-                <&mt LA(RIGHT_ARROW) RIGHT_ARROW>,
+                <&mt LC(LS(RIGHT_ARROW)) RIGHT_ARROW>,
                 <&paste_formulas_only>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
