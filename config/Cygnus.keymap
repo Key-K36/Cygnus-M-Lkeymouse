@@ -18,16 +18,16 @@
     combos {
         compatible = "zmk,combos";
 
-        f7 {
-            bindings = <&kp F7>;
-            key-positions = <5 4>;
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <11 10>;
             layers = <0>;
         };
 
         f12 {
-            bindings = <&kp F12>;
-            key-positions = <27 28>;
-            layers = <1>;
+            bindings = <&kp F7>;
+            key-positions = <6 7>;
+            layers = <0>;
         };
 
         remove_duplicates {
@@ -470,10 +470,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q         &kp W                 &kp E          &kp R          &kp T                                                    &kp Y                    &kp U  &kp I      &kp O    &lt 3 P        &mt AT_SIGN MINUS
-&kp TAB                 &kp A         &kp S                 &kp D          &kp F          &kp G        &kp ESCAPE         &trans                   &kp H                    &kp J  &kp K      &kp L    &kp SEMI       &kp LEFT_BRACKET
-&kp LSHFT               &kp Z         &kp X                 &kp C          &kp V          &kp B        &lt 6 LG(LS(S))    &mt UP_ARROW DOWN_ARROW  &kp N                    &kp M  &kp COMMA  &kp DOT  &kp SLASH      &kp RIGHT_BRACKET
-&mt LEFT_CONTROL LC(C)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &mt F2 DELETE  &kp BACKSPACE  &lt 1 SPACE  &trans             &mt LS(HOME) LEFT_ARROW  &mt LS(END) RIGHT_ARROW                             &kp LS(MINUS)  &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q         &kp W                &kp E            &kp R          &kp T                                                    &kp Y                    &kp U  &kp I      &kp O    &lt 3 P        &mt AT_SIGN MINUS
+&kp TAB                 &kp A         &kp S                &kp D            &kp F          &kp G        &kp ESCAPE         &trans                   &kp H                    &kp J  &kp K      &kp L    &kp SEMI       &kp LEFT_BRACKET
+&kp LSHFT               &kp Z         &kp X                &kp C            &kp V          &kp B        &lt 6 LG(LS(S))    &mt UP_ARROW DOWN_ARROW  &kp N                    &kp M  &kp COMMA  &kp DOT  &kp SLASH      &kp RIGHT_BRACKET
+&mt LEFT_CONTROL LC(C)  &kp LEFT_GUI  &mt LG(TAB) LA(TAB)  &mt LEFT_ALT F2  &kp BACKSPACE  &lt 1 SPACE  &trans             &mt LS(HOME) LEFT_ARROW  &mt LS(END) RIGHT_ARROW                             &kp LS(MINUS)  &lt 1 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -481,10 +481,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &mt F9 KP_NUMBER_9         &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                                 &mt GRAVE SINGLE_QUOTE               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK           &tap_up               &tap_rclk
-&trans                    &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &mt AMPERSAND KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans                           &mt DOLLAR BACKSLASH                 &kp PERCENT           &kp AMPERSAND          &tap_left           &tap_down             &tap_right
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3            &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort                  &kp EXCLAMATION                      &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus  &tap_colum_cut_minus  &tap_row_copy_plus
-&mt LC(LEFT_SHIFT) LC(C)  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT              &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                   &tap_colum_copy_plus  &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                                 &mt GRAVE SINGLE_QUOTE               &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK           &tap_up               &tap_rclk
+&mt F12 F9                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans                           &mt DOLLAR BACKSLASH                 &kp PERCENT           &kp AMPERSAND          &tap_left           &tap_down             &tap_right
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort                  &kp EXCLAMATION                      &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus  &tap_colum_cut_minus  &tap_row_copy_plus
+&mt LC(LEFT_SHIFT) LC(C)  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                   &tap_colum_copy_plus  &mt LC(S) LC(Z)
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
