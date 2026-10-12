@@ -369,7 +369,10 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_LEFT";
-            bindings = <&mt LA(LEFT_ARROW) LEFT_ARROW>, <&mt LC(V) LC(LS(V))>;
+            bindings =
+                <&mt LA(LEFT_ARROW) LEFT_ARROW>,
+                <&mt LC(V) LC(LS(V))>,
+                <&paste_formulas_only>;
         };
 
         tap_right: tap_right {
@@ -379,7 +382,6 @@
             label = "TAP_RIGHT";
             bindings =
                 <&mt LC(LS(RIGHT_ARROW)) RIGHT_ARROW>,
-                <&paste_formulas_only>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
         };
@@ -481,10 +483,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                    &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK           &tap_up               &tap_rclk
-&mt F12 F9                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans              &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_left           &tap_down             &tap_right
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort     &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &tap_row_cut_minus  &tap_colum_cut_minus  &tap_row_copy_plus
-&mt LC(LEFT_SHIFT) LC(C)  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)                                                                      &tap_colum_copy_plus  &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS   &mt GREATER_THAN RIGHT_PARENTHESIS                                    &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK  &tap_up               &tap_rclk
+&mt F12 F9                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK       &mt AMPERSAND SLASH                 &trans        &trans              &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_left  &tap_down             &tap_right
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                      &tap_round                          &tap_equal    &tap_calcu_sort     &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans     &tap_colum_cut_minus  &trans
+&mt LC(LEFT_SHIFT) LC(C)  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &ht_sheet_delete_kp 0 BACKSPACE  &trans                              &trans        &tap_row_cut_minus  &tap_row_copy_plus                                                              &tap_colum_copy_plus  &mt LC(S) LC(Z)
             >;
 
             sensor-bindings = <&ROTATE SCRL_RIGHT SCRL_LEFT>;
