@@ -461,10 +461,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q               &kp W         &kp E                 &kp R          &kp T                                                         &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
-&kp TAB                 &kp A               &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
-&kp LSHFT               &kp LC(LEFT_SHIFT)  &kp Z         &kp X                 &kp C          &kp V        &lt 6 B          &tap_left                       &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
-&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)     &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                         &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
+&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
+&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 LG(S)      &tap_left                       &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
+&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
