@@ -344,7 +344,10 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAP_UP";
-            bindings = <&mt HOME UP_ARROW>, <&remove_duplicates>, <&sort>;
+            bindings =
+                <&mt HOME UP_ARROW>,
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
         };
 
         tap_down: tap_down {
@@ -354,8 +357,8 @@
             label = "TAP_DOWN";
             bindings =
                 <&mt END DOWN_ARROW>,
-                <&kp LC(LS(DOWN_ARROW))>,
-                <&kp LC(LS(RIGHT_ARROW))>;
+                <&mt LC(LS(RIGHT_ARROW)) LC(LS(DOWN_ARROW))>,
+                <&sort>;
         };
 
         tap_symbol: tap_symbol {
@@ -438,19 +441,10 @@
         tap_paste: tap_paste {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&lt 3 LC(LS(V))>, <&paste_formulas_only>;
+            bindings = <&lt 3 LC(LS(V))>, <&kp LC(V)>, <&paste_formulas_only>;
 
             tapping-term-ms = <250>;
             label = "TAP_PASTE";
-        };
-
-        tap_paste_sp: tap_paste_sp {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>, <&transpose_and_paste>, <&paste_memo_only>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_PASTE_SP";
         };
 
         tap_left: tap_left {
@@ -467,10 +461,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q               &kp W              &kp E                 &kp R          &kp T                                                      &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
-&kp TAB                 &kp A               &kp S              &kp D                 &kp F          &kp G        &kp ESCAPE    &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
-&kp LSHFT               &kp LG(LS(S))       &kp Z              &kp X                 &kp C          &kp V        &lt 6 B       &tap_left                       &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
-&mt LEFT_CONTROL LC(C)  &mt LEFT_GUI LG(D)  &mt LG(E) LG(TAB)  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &trans        &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q               &kp W         &kp E                 &kp R          &kp T                                                         &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
+&kp TAB                 &kp A               &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
+&kp LSHFT               &kp LC(LEFT_SHIFT)  &kp Z         &kp X                 &kp C          &kp V        &lt 6 B          &tap_left                       &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
+&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)     &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -478,10 +472,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                                            &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK  &tap_paste     &tap_rclk
-&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &trans                                      &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_up    &tap_paste_sp  &window_hold
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &mt LA(LS(LEFT_ARROW)) LA(LS(RIGHT_ARROW))  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &tap_down  &kp LC(LS(L))  &mt LA(F4) LC(W)
-&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &mt LC(SPACE) LS(SPACE)             &trans        &tap_colum                                  &tap_row                                                                        &trans         &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                                            &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK  &tap_paste          &tap_rclk
+&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &trans                                      &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_up    &kp LC(LS(L))       &window_hold
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &mt LA(LS(LEFT_ARROW)) LA(LS(RIGHT_ARROW))  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &tap_down  &remove_duplicates  &mt LA(F4) LC(W)
+&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &mt LC(SPACE) LS(SPACE)             &trans        &tap_colum                                  &tap_row                                                                        &trans              &mt LC(S) LC(Z)
             >;
         };
 
