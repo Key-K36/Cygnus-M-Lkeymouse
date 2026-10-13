@@ -452,6 +452,14 @@
             tapping-term-ms = <250>;
             label = "TAP_PASTE_SP";
         };
+
+        tap_left: tap_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_LEFT";
+            bindings = <&mt LS(HOME) LEFT_ARROW>, <&kp F2>;
+        };
     };
 
     keymap {
@@ -459,10 +467,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q                &kp W               &kp E            &kp R          &kp T                                                      &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
-&kp TAB                 &kp A                &kp S               &kp D            &kp F          &kp G        &kp ESCAPE    &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
-&kp LSHFT               &kp LG(LS(S))        &kp Z               &kp X            &kp C          &kp V        &lt 6 B       &mt LS(HOME) LEFT_ARROW         &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
-&mt LEFT_CONTROL LC(C)  &mt LG(TAB) LA(TAB)  &mt LEFT_GUI LG(D)  &mt LEFT_ALT F2  &kp BACKSPACE  &lt 1 SPACE  &trans        &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q               &kp W              &kp E                 &kp R          &kp T                                                      &mt F12 F7                         &kp Y                    &kp U  &kp I  &lt 3 O    &mt AT_SIGN P
+&kp TAB                 &kp A               &kp S              &kp D                 &kp F          &kp G        &kp ESCAPE    &trans                          &mt HOME UP_ARROW                  &kp H                    &kp J  &kp K  &kp L      &tap_symbol
+&kp LSHFT               &kp LG(LS(S))       &kp Z              &kp X                 &kp C          &kp V        &lt 6 B       &tap_left                       &mt END DOWN_ARROW                 &mt LS(END) RIGHT_ARROW  &kp N  &kp M  &kp COMMA  &kp DOT
+&mt LEFT_CONTROL LC(C)  &mt LEFT_GUI LG(D)  &mt LG(E) LG(TAB)  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &trans        &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                         &kp SLASH  &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
