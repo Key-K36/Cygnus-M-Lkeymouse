@@ -339,39 +339,6 @@
             label = "TAP_RCLK";
         };
 
-        tap_up1: tap_up1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_UP1";
-            bindings =
-                <&mt HOME UP_ARROW>,
-                <&transpose_and_paste>,
-                <&paste_memo_only>;
-        };
-
-        tap_down1: tap_down1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_DOWN1";
-            bindings =
-                <&mt END DOWN_ARROW>,
-                <&mt LC(LS(RIGHT_ARROW)) LC(LS(DOWN_ARROW))>,
-                <&sort>;
-        };
-
-        tap_symbol: tap_symbol {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            label = "TAP_SYMBOL";
-            bindings =
-                <&mt SEMICOLON MINUS>,
-                <&kp LEFT_BRACKET>,
-                <&kp RIGHT_BRACKET>;
-        };
-
         tap_row: tap_row {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -438,15 +405,6 @@
             label = "TAP_ROUND";
         };
 
-        tap_paste: tap_paste {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&lt 3 LC(LS(V))>, <&kp LC(V)>, <&paste_formulas_only>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_PASTE";
-        };
-
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -454,8 +412,42 @@
             label = "TAP_UP";
             bindings =
                 <&mt HOME UP_ARROW>,
-                <&mt LC(V) LC(LS(V))>,
+                <&kp LC(LS(V))>,
                 <&paste_formulas_only>;
+        };
+
+        tap_down: tap_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_DOWN";
+            bindings =
+                <&mt END DOWN_ARROW>,
+                <&kp LC(LS(DOWN_ARROW))>,
+                <&kp LC(LS(L))>;
+        };
+
+        tap_left: tap_left {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_LEFT";
+            bindings =
+                <&mt LS(HOME) LEFT_ARROW>,
+                <&kp LC(V)>,
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
+        };
+
+        tap_right: tap_right {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAP_RIGHT";
+            bindings =
+                <&mt LS(END) RIGHT_ARROW>,
+                <&kp LC(LS(RIGHT_ARROW))>,
+                <&window_hold>;
         };
     };
 
@@ -464,10 +456,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                         &mt HOME UP_ARROW                  &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
-&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &mt F12 F7                      &mt END DOWN_ARROW                 &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
-&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 LG(S)      &mt LS(HOME) LEFT_ARROW         &mt LS(END) RIGHT_ARROW            &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt RIGHT_BRACKET LEFT_BRACKET
-&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F12                &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
+&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &trans                          &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
+&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 LG(S)      &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt RIGHT_BRACKET LEFT_BRACKET
+&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -475,10 +467,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                                            &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK   &tap_paste          &tap_rclk
-&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &trans                                      &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_up1    &kp LC(LS(L))       &window_hold
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &mt LA(LS(LEFT_ARROW)) LA(LS(RIGHT_ARROW))  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &tap_down1  &remove_duplicates  &mt LA(F4) LC(W)
-&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &mt LC(SPACE) LS(SPACE)             &trans        &tap_colum                                  &tap_row                                                                         &trans              &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                                            &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK           &tap_up    &tap_rclk
+&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &trans                                      &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_left           &tap_down  &tap_right
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &mt LA(LS(LEFT_ARROW)) LA(LS(RIGHT_ARROW))  &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &remove_duplicates  &sort      &mt LA(F4) LC(W)
+&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &mt LC(SPACE) LS(SPACE)             &trans        &tap_colum                                  &tap_row                                                                                 &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
