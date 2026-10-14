@@ -458,7 +458,7 @@
             bindings = <
 &mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
 &kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp ESCAPE       &trans                          &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
-&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 LG(S)      &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt RIGHT_BRACKET LEFT_BRACKET
+&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 LG(S)      &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
 &mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
             >;
 
