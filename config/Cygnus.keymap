@@ -468,10 +468,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
-&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp C_MUTE                  &mt C_AC_SCROLL_DOWN C_AC_SCROLL_UP  &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
-&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 ESCAPE                &kp LEFT_ARROW                       &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
-&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &mt LG(LS(S)) LANGUAGE_5    &mt LA(LEFT_ARROW) LC(PAGE_UP)       &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                                             &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
+&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp C_MUTE                           &mt K_SCROLL_DOWN K_SCROLL_UP   &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
+&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 ESCAPE                         &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
+&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &mt LG(LS(S)) LANG_ZENKAKUHANKAKU    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
