@@ -356,6 +356,7 @@
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
             label = "HT_MSC";
+            quick-tap-ms = <200>;
         };
 
         tap_lclk: tap_lclk {
