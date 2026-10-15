@@ -330,28 +330,6 @@
             label = "HT_CALCULATION";
         };
 
-        ht_kp_mkp: ht_kp_mkp {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&mkp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            label = "HT_KP_MKP";
-        };
-
-        ht_cc_kp: ht_cc_kp {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&control_click>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            label = "HT_CC_KP";
-        };
-
         ht_sc_rmkp: ht_sc_rmkp {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&shift_click>, <&mkp>;
@@ -377,10 +355,7 @@
         tap_lclk: tap_lclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings =
-                <&mkp LCLK>,
-                <&mt LC(V) LC(LS(V))>,
-                <&paste_formulas_only>;
+            bindings = <&mkp LCLK>, <&kp LC(LS(V))>, <&paste_formulas_only>;
 
             tapping-term-ms = <175>;
             label = "TAP_LCLK";
@@ -402,7 +377,7 @@
             label = "TAP_UP";
             bindings =
                 <&mt HOME UP_ARROW>,
-                <&kp LC(LS(V))>,
+                <&kp LC(V)>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
         };
