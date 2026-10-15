@@ -374,6 +374,30 @@
             label = "HT_MSC";
         };
 
+        tap_lclk: tap_lclk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_sc_rmkp 0 RCLK>,
+                <&ht_cclick_namechange 0 0>,
+                <&sheet_delete>;
+
+            tapping-term-ms = <200>;
+            label = "TAP_LCLK";
+        };
+
+        tap_rclk: tap_rclk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_sc_rmkp 0 RCLK>,
+                <&ht_cclick_namechange 0 0>,
+                <&sheet_delete>;
+
+            tapping-term-ms = <200>;
+            label = "TAP_RCLK";
+        };
+
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -417,18 +441,6 @@
                 <&mt LS(END) RIGHT_ARROW>,
                 <&kp LC(LS(RIGHT_ARROW))>,
                 <&window_hold>;
-        };
-
-        tap_rclk: tap_rclk {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings =
-                <&ht_sc_rmkp 0 RCLK>,
-                <&ht_cclick_namechange 0 0>,
-                <&sheet_delete>;
-
-            tapping-term-ms = <200>;
-            label = "TAP_RCLK";
         };
 
         tap_row: tap_row {
