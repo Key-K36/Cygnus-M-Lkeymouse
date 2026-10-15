@@ -100,7 +100,7 @@
             label = "PASTE_MEMO_ONLY";
         };
 
-        auto_calculation: auto_calculation {
+        auto_calculation_on: auto_calculation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp M &kp X &kp A>;
@@ -273,6 +273,20 @@
 
             label = "CONTOLOR_CLICK";
         };
+
+        ime_tog: ime_on_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "IME_ON_OFF";
+        };
     };
 
     behaviors {
@@ -296,7 +310,7 @@
 
         ht_calculation: ht_calculation {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&auto_calculation>, <&auto_calculation_off>;
+            bindings = <&auto_calculation_on>, <&auto_calculation_off>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
@@ -461,6 +475,17 @@
             tapping-term-ms = <250>;
             label = "TAP_ROW_COLUM_GROUP";
         };
+
+        ht_kp_ime: ht_kp_ime {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&ime_tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_KP_IME";
+        };
     };
 
     keymap {
@@ -468,10 +493,10 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                                             &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
-&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp C_MUTE                           &mt K_SCROLL_DOWN K_SCROLL_UP   &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
-&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 ESCAPE                         &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
-&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &mt LG(LS(S)) LANG_ZENKAKUHANKAKU    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
+&mt CAPSLOCK LS(TAB)    &kp Q            &kp W         &kp E                 &kp R          &kp T                                                                  &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
+&kp TAB                 &kp A            &kp S         &kp D                 &kp F          &kp G        &kp C_MUTE                &mt K_SCROLL_DOWN K_SCROLL_UP   &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
+&kp LSHFT               &kp Z            &kp X         &kp C                 &kp V          &kp B        &lt 6 ESCAPE              &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
+&mt LEFT_CONTROL LC(C)  &mt LG(E) LG(D)  &kp LEFT_GUI  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &ht_kp_ime LG(LS(S)) 0    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
