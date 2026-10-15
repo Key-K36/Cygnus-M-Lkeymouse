@@ -51,6 +51,20 @@
             label = "TO_LAYER_0";
         };
 
+        ime_tog: ime_on_off {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "IME_ON_OFF";
+        };
+
         sort: transe_row_colum {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -273,20 +287,6 @@
 
             label = "CONTOLOR_CLICK";
         };
-
-        ime_tog: ime_on_off {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
-
-            label = "IME_ON_OFF";
-        };
     };
 
     behaviors {
@@ -306,6 +306,17 @@
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;
+        };
+
+        ht_kp_ime: ht_kp_ime {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&kp>, <&ime_tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_KP_IME";
         };
 
         ht_calculation: ht_calculation {
@@ -330,6 +341,17 @@
             label = "HT_CCLICK_NAMECHANGE";
         };
 
+        ht_sc_lmkp: ht_sc_lmkp {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&shift_click>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_SC_LMKP";
+        };
+
         ht_sc_rmkp: ht_sc_rmkp {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&shift_click>, <&mkp>;
@@ -341,82 +363,15 @@
             label = "HT_SC_RMKP";
         };
 
-        tap_rclk: tap_rclk {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings =
-                <&ht_sc_rmkp 0 RCLK>,
-                <&ht_cclick_namechange 0 0>,
-                <&sheet_delete>;
+        ht_msc: ht_msc {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&msc>, <&msc>;
 
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
-            label = "TAP_RCLK";
-        };
-
-        tap_row: tap_row {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&row_copy>, <&row_cut>, <&row_plus>, <&row_minus>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_ROW";
-        };
-
-        tap_colum: tap_colum {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings =
-                <&colum_copy>,
-                <&colum_cut>,
-                <&colum_plus>,
-                <&colum_minus>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_COLUM";
-        };
-
-        tap_calcu: tap_calcu {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&ht_calculation 0 0>, <&kp F9>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_CALCU";
-        };
-
-        tap_equal: tap_equal {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mt DOUBLE_QUOTES EQUAL>, <&sum>, <&sumproduct>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_EQUAL";
-        };
-
-        tap_lookup: tap_lookup {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings =
-                <&mt LC(KP_PLUS) KP_PLUS>,
-                <&vlookup>,
-                <&sumif>,
-                <&sumifs>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_LOOKUP";
-        };
-
-        tap_round: tap_round {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings =
-                <&mt LC(KP_MINUS) KP_MINUS>,
-                <&roundup>,
-                <&rounddown>,
-                <&round>;
-
-            tapping-term-ms = <250>;
-            label = "TAP_ROUND";
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+            label = "HT_MSC";
         };
 
         tap_up: tap_up {
@@ -464,6 +419,40 @@
                 <&window_hold>;
         };
 
+        tap_rclk: tap_rclk {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&ht_sc_rmkp 0 RCLK>,
+                <&ht_cclick_namechange 0 0>,
+                <&sheet_delete>;
+
+            tapping-term-ms = <200>;
+            label = "TAP_RCLK";
+        };
+
+        tap_row: tap_row {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&row_copy>, <&row_cut>, <&row_plus>, <&row_minus>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROW";
+        };
+
+        tap_colum: tap_colum {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&colum_copy>,
+                <&colum_cut>,
+                <&colum_plus>,
+                <&colum_minus>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_COLUM";
+        };
+
         tap_row_colum_group: tap_row_colum_group {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -476,26 +465,48 @@
             label = "TAP_ROW_COLUM_GROUP";
         };
 
-        ht_kp_ime: ht_kp_ime {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&kp>, <&ime_tog>;
+        tap_calcu: tap_calcu {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&ht_calculation 0 0>, <&kp F9>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            label = "HT_KP_IME";
+            tapping-term-ms = <250>;
+            label = "TAP_CALCU";
         };
 
-        ht_msc: ht_msc {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&msc>, <&msc>;
+        tap_equal: tap_equal {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mt DOUBLE_QUOTES EQUAL>, <&sum>, <&sumproduct>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            label = "HT_MSC";
+            tapping-term-ms = <250>;
+            label = "TAP_EQUAL";
+        };
+
+        tap_lookup: tap_lookup {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&mt LC(KP_PLUS) KP_PLUS>,
+                <&vlookup>,
+                <&sumif>,
+                <&sumifs>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_LOOKUP";
+        };
+
+        tap_round: tap_round {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings =
+                <&mt LC(KP_MINUS) KP_MINUS>,
+                <&roundup>,
+                <&rounddown>,
+                <&round>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_ROUND";
         };
     };
 
