@@ -314,7 +314,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
             label = "HT_KP_IME";
         };
@@ -325,31 +325,31 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
             label = "HT_CALCULATION";
         };
 
-        ht_cclick_namechange: ht_cclick_namechange {
+        ht_kp_mkp: ht_kp_mkp {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&control_click>, <&name_change>;
+            bindings = <&kp>, <&mkp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
-            label = "HT_CCLICK_NAMECHANGE";
+            label = "HT_KP_MKP";
         };
 
-        ht_sc_lmkp: ht_sc_lmkp {
+        ht_cc_kp: ht_cc_kp {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&shift_click>, <&mkp>;
+            bindings = <&control_click>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
-            label = "HT_SC_LMKP";
+            label = "HT_CC_KP";
         };
 
         ht_sc_rmkp: ht_sc_rmkp {
@@ -358,7 +358,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
             label = "HT_SC_RMKP";
         };
@@ -369,7 +369,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <(-1)>;
             flavor = "balanced";
             label = "HT_MSC";
         };
@@ -378,9 +378,9 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings =
-                <&ht_sc_rmkp 0 RCLK>,
-                <&ht_cclick_namechange 0 0>,
-                <&sheet_delete>;
+                <&mkp LCLK>,
+                <&ht_kp_mkp LC(V) LCLK>,
+                <&paste_formulas_only>;
 
             tapping-term-ms = <200>;
             label = "TAP_LCLK";
@@ -389,10 +389,7 @@
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings =
-                <&ht_sc_rmkp 0 RCLK>,
-                <&ht_cclick_namechange 0 0>,
-                <&sheet_delete>;
+            bindings = <&ht_sc_rmkp 0 RCLK>, <&control_click>, <&sheet_delete>;
 
             tapping-term-ms = <200>;
             label = "TAP_RCLK";
@@ -406,7 +403,8 @@
             bindings =
                 <&mt HOME UP_ARROW>,
                 <&kp LC(LS(V))>,
-                <&paste_formulas_only>;
+                <&transpose_and_paste>,
+                <&paste_memo_only>;
         };
 
         tap_down: tap_down {
@@ -416,8 +414,8 @@
             label = "TAP_DOWN";
             bindings =
                 <&mt END DOWN_ARROW>,
-                <&kp LC(LS(DOWN_ARROW))>,
-                <&kp LC(LS(L))>;
+                <&mt LC(LS(L)) LC(LS(DOWN_ARROW))>,
+                <&sort>;
         };
 
         tap_left: tap_left {
@@ -427,9 +425,8 @@
             label = "TAP_LEFT";
             bindings =
                 <&mt LS(HOME) LEFT_ARROW>,
-                <&kp LC(V)>,
-                <&transpose_and_paste>,
-                <&paste_memo_only>;
+                <&kp F2>,
+                <&remove_duplicates>;
         };
 
         tap_right: tap_right {
@@ -538,10 +535,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                              &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mkp LCLK           &tap_up    &tap_rclk
-&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_left           &tap_down  &tap_right
-&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &tap_row_colum_group          &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &remove_duplicates  &sort      &mt LA(F4) LC(W)
-&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &trans                              &trans        &tap_colum                    &tap_row                                                                                 &kp F12    &mt LC(S) LC(Z)
+&mt LC(NUMBER_1) LS(TAB)  &kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS                                              &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &tap_lclk  &tap_up    &tap_rclk
+&tap_calcu                &mt F4 KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt DOUBLE_QUOTES ASTERISK      &mt AMPERSAND SLASH                 &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt DOLLAR BACKSLASH    &kp PERCENT           &kp AMPERSAND          &tap_left  &tap_down  &tap_right
+&trans                    &kp KP_NUMBER_1                  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &tap_lookup                     &tap_round                          &tap_equal    &tap_row_colum_group          &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans     &trans     &mt LA(F4) LC(W)
+&trans                    &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &mt COMMA DOT    &trans                          &trans                              &trans        &tap_colum                    &tap_row                                                                        &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
