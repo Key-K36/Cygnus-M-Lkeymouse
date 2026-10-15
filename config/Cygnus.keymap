@@ -382,7 +382,7 @@
                 <&mt LC(V) LC(LS(V))>,
                 <&paste_formulas_only>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <175>;
             label = "TAP_LCLK";
         };
 
