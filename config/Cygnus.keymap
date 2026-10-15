@@ -324,8 +324,8 @@
             bindings = <&auto_calculation_on>, <&auto_calculation_off>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             label = "HT_CALCULATION";
         };
@@ -335,8 +335,8 @@
             bindings = <&kp>, <&mkp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             label = "HT_KP_MKP";
         };
@@ -347,7 +347,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <(-1)>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             label = "HT_CC_KP";
         };
@@ -382,7 +382,7 @@
                 <&ht_kp_mkp LC(V) LCLK>,
                 <&paste_formulas_only>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             label = "TAP_LCLK";
         };
 
