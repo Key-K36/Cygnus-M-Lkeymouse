@@ -314,7 +314,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
+            quick-tap-ms = <200>;
             flavor = "balanced";
             label = "HT_KP_IME";
         };
@@ -335,7 +335,7 @@
             bindings = <&kp>, <&mkp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <200>;
             flavor = "balanced";
             label = "HT_KP_MKP";
@@ -382,7 +382,7 @@
                 <&ht_kp_mkp LC(V) LCLK>,
                 <&paste_formulas_only>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <250>;
             label = "TAP_LCLK";
         };
 
