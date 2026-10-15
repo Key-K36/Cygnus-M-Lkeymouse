@@ -379,7 +379,7 @@
             #binding-cells = <0>;
             bindings =
                 <&mkp LCLK>,
-                <&ht_kp_mkp LC(V) LCLK>,
+                <&mt LC(V) LC(LS(V))>,
                 <&paste_formulas_only>;
 
             tapping-term-ms = <150>;
