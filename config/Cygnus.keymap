@@ -373,14 +373,14 @@
             #binding-cells = <0>;
             bindings = <&ht_sc_rmkp 0 RCLK>, <&control_click>, <&sheet_delete>;
 
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             label = "TAP_RCLK";
         };
 
         tap_up: tap_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             label = "TAP_UP";
             bindings =
                 <&mt HOME UP_ARROW>,
@@ -392,7 +392,7 @@
         tap_down: tap_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             label = "TAP_DOWN";
             bindings =
                 <&mt END DOWN_ARROW>,
@@ -403,7 +403,7 @@
         tap_left: tap_left {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             label = "TAP_LEFT";
             bindings =
                 <&mt LS(HOME) LEFT_ARROW>,
@@ -414,7 +414,7 @@
         tap_right: tap_right {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             label = "TAP_RIGHT";
             bindings =
                 <&mt LS(END) RIGHT_ARROW>,
