@@ -362,7 +362,7 @@
         tap_lclk: tap_lclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mkp LCLK>, <&kp LC(LS(V))>, <&paste_formulas_only>;
+            bindings = <&mkp LCLK>, <&mt LC(V) LC(LS(V))>, <&kp LC(X)>;
 
             tapping-term-ms = <175>;
             label = "TAP_LCLK";
@@ -384,7 +384,7 @@
             label = "TAP_UP";
             bindings =
                 <&mt HOME UP_ARROW>,
-                <&kp LC(V)>,
+                <&paste_formulas_only>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
         };
