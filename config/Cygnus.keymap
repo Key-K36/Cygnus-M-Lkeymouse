@@ -34,12 +34,6 @@
             layers = <1>;
         };
 
-        numlock {
-            bindings = <&kp KP_NUMLOCK>;
-            key-positions = <0 1>;
-            layers = <1>;
-        };
-
         merging {
             bindings = <&merging_cells>;
             key-positions = <48 47>;
@@ -225,49 +219,49 @@
         sumif: sumif {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp LPAR>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp LEFT_PARENTHESIS>;
             label = "SUMIF";
         };
 
         sumifs: sumifs {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp S &kp LPAR>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp I &kp F &kp S &kp LEFT_PARENTHESIS>;
             label = "SUMIFS";
         };
 
         round: round {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp LPAR &kp LPAR>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS>;
             label = "ROUND";
         };
 
         roundup: roundup {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp U &kp P &kp LPAR &kp LPAR>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp U &kp P &kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS>;
             label = "ROUNDUP";
         };
 
         rounddown: rounddown {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp D &kp O &kp W &kp N &kp LPAR &kp LPAR>;
+            bindings = <&kp EQUAL &kp R &kp O &kp U &kp N &kp D &kp D &kp O &kp W &kp N &kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS>;
             label = "ROUNDDOWN";
         };
 
         sum: sum {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp S &kp U &kp M &kp LPAR>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp LEFT_PARENTHESIS>;
             label = "SUM";
         };
 
         sumproduct: sumproduct {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp EQUAL &kp S &kp U &kp M &kp P &kp R &kp O &kp D &kp U &kp C &kp T &kp LPAR>;
+            bindings = <&kp EQUAL &kp S &kp U &kp M &kp P &kp R &kp O &kp D &kp U &kp C &kp T &kp LEFT_PARENTHESIS>;
             label = "SUMPRODUCT";
         };
 
@@ -296,6 +290,20 @@
                 <&kp LEFT_CONTROL &mkp LCLK>;
 
             label = "CONTOLOR_CLICK";
+        };
+
+        mid: mid {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp M &kp I &kp D &kp LEFT_PARENTHESIS>;
+            label = "MID";
+        };
+
+        text: text {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp T &kp E &kp X &kp T &kp LEFT_PARENTHESIS>;
+            label = "TEXT";
         };
     };
 
@@ -468,7 +476,7 @@
         tap_equal: tap_equal {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mt DOUBLE_QUOTES EQUAL>, <&sum>, <&sumproduct>;
+            bindings = <&mt KP_EQUAL KP_DOT>, <&sum>, <&sumproduct>;
 
             tapping-term-ms = <250>;
             label = "TAP_EQUAL";
@@ -477,11 +485,7 @@
         tap_lookup: tap_lookup {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings =
-                <&mt LC(KP_PLUS) KP_PLUS>,
-                <&vlookup>,
-                <&sumif>,
-                <&sumifs>;
+            bindings = <&vlookup>, <&sumif>, <&sumifs>;
 
             tapping-term-ms = <250>;
             label = "TAP_LOOKUP";
@@ -490,14 +494,19 @@
         tap_round: tap_round {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings =
-                <&mt LC(KP_MINUS) KP_MINUS>,
-                <&roundup>,
-                <&rounddown>,
-                <&round>;
+            bindings = <&roundup>, <&rounddown>, <&round>;
 
             tapping-term-ms = <250>;
             label = "TAP_ROUND";
+        };
+
+        tap_mid_text: tap_mid_text {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mid>, <&text>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_MID_TEXT";
         };
     };
 
@@ -517,10 +526,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&ht_kp_ime DELETE 0  &trans  &mt COMMA NUMBER_7            &mt SLASH NUMBER_8          &mt ASTERISK NUMBER_9  &mt DELETE BACKSPACE                                              &mt GRAVE SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &tap_lclk  &tap_up    &tap_rclk
-&trans               &trans  &mt F4 NUMBER_4               &kp NUMBER_5                &kp NUMBER_6           &tap_round            &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT           &kp AMPERSAND          &tap_left  &tap_down  &tap_right
-&trans               &trans  &mt LC(NUMBER_1) NUMBER_1     &mt DOUBLE_QUOTES NUMBER_2  &kp NUMBER_3           &tap_lookup           &tap_equal    &tap_row_colum_group          &kp EXCLAMATION         &kp DOUBLE_QUOTES     &kp POUND              &trans     &trans     &mt LA(F4) LC(W)
-&trans               &trans  &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero                &mt COMMA DOT          &tap_calcu            &trans        &tap_colum                    &tap_row                                                                        &kp F12    &mt LC(S) LC(Z)
+&ht_kp_ime KP_NUMLOCK 0  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &kp BACKSPACE                                                          &mt GRAVE SINGLE_QUOTE    &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &tap_lclk  &tap_up    &tap_rclk
+&trans                   &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_MINUS) KP_MINUS  &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR      &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
+&trans                   &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &mt LC(KP_PLUS) KP_PLUS    &tap_calcu    &tap_row_colum_group          &mt KP_EQUAL EXCLAMATION  &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
+&trans                   &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &tap_equal                &trans                     &trans        &tap_colum                    &tap_row                                                                                                 &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
