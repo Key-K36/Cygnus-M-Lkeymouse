@@ -367,15 +367,6 @@
             label = "HT_CALCULATION";
         };
 
-        tap_lclk: tap_lclk {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&mkp LCLK>, <&mt LC(V) LC(LS(V))>, <&kp LC(X)>;
-
-            tapping-term-ms = <175>;
-            label = "TAP_LCLK";
-        };
-
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -392,6 +383,7 @@
             label = "TAP_UP";
             bindings =
                 <&mt HOME UP_ARROW>,
+                <&mt LC(V) LC(LS(V))>,
                 <&paste_formulas_only>,
                 <&transpose_and_paste>,
                 <&paste_memo_only>;
@@ -526,10 +518,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&ht_kp_ime KP_NUMLOCK 0  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &kp BACKSPACE                                                          &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &tap_lclk  &tap_up    &tap_rclk
+&ht_kp_ime KP_NUMLOCK 0  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &kp BACKSPACE                                                          &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
 &trans                   &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_MINUS) KP_MINUS  &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
 &trans                   &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &mt LC(KP_PLUS) KP_PLUS    &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
-&trans                   &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &tap_equal                &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
+&mt LEFT_CONTROL LC(X)   &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &tap_equal                &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
