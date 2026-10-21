@@ -22,8 +22,8 @@
     combos {
         compatible = "zmk,combos";
 
-        ime {
-            bindings = <&ime_tog>;
+        henkan {
+            bindings = <&kp LC(RIGHT_BRACKET)>;
             key-positions = <22 23>;
             layers = <0 1>;
         };
@@ -44,6 +44,12 @@
             bindings = <&merging_cells>;
             key-positions = <48 47>;
             layers = <1>;
+        };
+
+        muhenkan {
+            bindings = <&kp LC(LEFT_BRACKET)>;
+            key-positions = <16 15>;
+            layers = <0 1>;
         };
     };
 
@@ -507,7 +513,7 @@
 
         default_layer {
             bindings = <
-&mt CAPSLOCK LS(TAB)    &kp Q         &kp W            &kp E                 &kp R          &kp T                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
+&ht_kp_ime CAPSLOCK 0   &kp Q         &kp W            &kp E                 &kp R          &kp T                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
 &kp TAB                 &kp A         &kp S            &kp D                 &kp F          &kp G        &kp C_MUTE       &ht_msc SCRL_DOWN SCRL_UP       &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
 &kp LSHFT               &kp Z         &kp X            &kp C                 &kp V          &kp B        &lt 6 ESCAPE     &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
 &mt LEFT_CONTROL LC(C)  &kp LEFT_GUI  &mt LG(E) LG(D)  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt 1 ENTER
@@ -518,10 +524,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&ht_kp_ime KP_NUMLOCK 0  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &kp BACKSPACE                                                          &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
-&trans                   &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_MINUS) KP_MINUS  &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
-&trans                   &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &mt LC(KP_PLUS) KP_PLUS    &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
-&mt LEFT_CONTROL LC(X)   &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &tap_equal                &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
+&mt KP_NUMLOCK LC(LEFT_BRACKET)  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                              &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
+&trans                           &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_PLUS) KP_PLUS    &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
+&trans                           &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &tap_equal                 &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
+&mt LEFT_CONTROL LC(X)           &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &trans                    &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
