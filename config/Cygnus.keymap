@@ -499,7 +499,7 @@
         tap_equal: tap_equal {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mt EQUAL KP_DOT>, <&sum>, <&sumproduct>;
+            bindings = <&kp EQUAL>, <&sum>, <&sumproduct>;
 
             tapping-term-ms = <250>;
             label = "TAP_EQUAL";
@@ -552,7 +552,7 @@
 &mt KP_NUMLOCK LC(LS(W))  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                              &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
 &trans                    &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_PLUS) KP_PLUS    &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
 &trans                    &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &tap_equal                 &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
-&mt LEFT_CONTROL LC(X)    &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &trans                    &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
+&mt LEFT_CONTROL LC(X)    &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &mt KP_COMMA KP_DOT       &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
             >;
         };
 
