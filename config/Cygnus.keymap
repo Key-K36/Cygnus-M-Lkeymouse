@@ -199,7 +199,7 @@
         double_zero: double_zero {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp KP_NUMBER_0 &kp KP_NUMBER_0>;
+            bindings = <&kp NUMBER_0 &kp NUMBER_0>;
             label = "DOUBLE_ZERO";
         };
 
