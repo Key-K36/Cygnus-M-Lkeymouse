@@ -530,6 +530,15 @@
             tapping-term-ms = <250>;
             label = "TAP_NUM_ENTER";
         };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mt (F9) LC(Z)>, <&mt (LC(S)) LG(D)>;
+
+            tapping-term-ms = <250>;
+            label = "NEW_BEHAVIOR";
+        };
     };
 
     keymap {
