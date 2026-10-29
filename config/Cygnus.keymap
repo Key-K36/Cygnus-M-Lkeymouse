@@ -525,7 +525,7 @@
         tap_num_enter: tap_num_enter {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&mt (F9) LC(Z)>, <&mt (LC(S)) LG(D)>;
+            bindings = <&mt (LG(D)) LC(Z)>, <&mt LC(S) F9>;
 
             tapping-term-ms = <250>;
             label = "TAP_NUM_ENTER";
