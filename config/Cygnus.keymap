@@ -388,16 +388,6 @@
             quick-tap-ms = <200>;
         };
 
-        ht_calculation: ht_calculation {
-            compatible = "zmk,behavior-hold-tap";
-            bindings = <&auto_calculation_on>, <&auto_calculation_off>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            label = "HT_CALCULATION";
-        };
-
         tap_rclk: tap_rclk {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -490,7 +480,7 @@
         tap_calcu: tap_calcu {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&ht_calculation 0 0>, <&kp F9>;
+            bindings = <&auto_calculation_off>, <&auto_calculation_on>;
 
             tapping-term-ms = <250>;
             label = "TAP_CALCU";
@@ -531,6 +521,15 @@
             tapping-term-ms = <250>;
             label = "TAP_MID_TEXT";
         };
+
+        tap_num_enter: tap_num_enter {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&mt LC(S) F9>, <&mt (LG(D)) LC(Z)>;
+
+            tapping-term-ms = <250>;
+            label = "TAP_NUM_ENTER";
+        };
     };
 
     keymap {
@@ -538,10 +537,10 @@
 
         default_layer {
             bindings = <
-&ht_kp_ime CAPSLOCK 0   &kp Q         &kp W            &kp E                 &kp R          &kp T                                                         &kp UP_ARROW                       &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
-&kp TAB                 &kp A         &kp S            &kp D                 &kp F          &kp G        &kp C_MUTE       &ht_msc SCRL_DOWN SCRL_UP       &kp DOWN_ARROW                     &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
-&kp LSHFT               &kp Z         &kp X            &kp C                 &kp V          &kp B        &lt 6 ESCAPE     &kp LEFT_ARROW                  &kp RIGHT_ARROW                    &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
-&mt LEFT_CONTROL LC(C)  &kp LEFT_GUI  &mt LG(E) LG(D)  &mt LEFT_ALT LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt LA(LEFT_ARROW) LC(PAGE_UP)  &mt LA(RIGHT_ARROW) LC(PAGE_DOWN)                                        &kp F7                 &lt_en 0 ENTER
+&ht_kp_ime CAPSLOCK 0     &kp Q         &kp W              &kp E                   &kp R          &kp T                                                           &kp UP_ARROW                         &kp Y  &kp U  &kp I                   &lt 3 O                &mt AT_SIGN P
+&kp TAB                   &kp A         &kp S              &kp D                   &kp F          &kp G        &kp C_MUTE       &ht_msc SCRL_DOWN SCRL_UP         &kp DOWN_ARROW                       &kp H  &kp J  &kp K                   &kp L                  &mt KP_MINUS MINUS
+&kp LSHFT                 &kp Z         &kp X              &kp C                   &kp V          &kp B        &lt 6 ESCAPE     &kp LEFT_ARROW                    &kp RIGHT_ARROW                      &kp N  &kp M  &mt LEFT_BRACKET COMMA  &mt RIGHT_BRACKET DOT  &mt SEMICOLON SLASH
+&mt (LEFT_CONTROL) LC(C)  &kp LEFT_GUI  &mt (LG(E)) LG(D)  &mt (LEFT_ALT) LA(TAB)  &kp BACKSPACE  &lt 1 SPACE  &kp LG(LS(S))    &mt (LA(LEFT_ARROW)) LC(PAGE_UP)  &mt (LA(RIGHT_ARROW)) LC(PAGE_DOWN)                                        &kp F7                 &lt_en 0 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -549,10 +548,10 @@
 
         NUM_SYMBOL {
             bindings = <
-&mt KP_NUMLOCK LC(LS(S))  &tap_lookup    &mt DELETE NUMBER_7           &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                              &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
-&trans                    &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_PLUS) KP_PLUS    &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
-&trans                    &tap_mid_text  &mt LC(NUMBER_1) NUMBER_1     &kp NUMBER_2            &kp NUMBER_3              &tap_equal                 &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt LA(F4) LC(W)
-&mt LEFT_CONTROL LC(X)    &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &mt COMMA DOT             &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &mt LC(S) LC(Z)
+&mt (LC(NUMBER_1)) LC(LS(S))  &tap_lookup    &mt KP_NUMLOCK NUMBER_7       &mt KP_DIVIDE NUMBER_8  &mt KP_ASTERISK NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                              &mt GRAVE SINGLE_QUOTE  &mt LESS_THAN LEFT_PARENTHESIS  &mt GREATER_THAN RIGHT_PARENTHESIS  &mkp LCLK  &tap_up    &tap_rclk
+&trans                        &tap_round     &mt F4 NUMBER_4               &kp NUMBER_5            &kp NUMBER_6              &mt LC(KP_PLUS) KP_PLUS    &trans        &ht_msc SCRL_RIGHT SCRL_LEFT  &mt BACKSLASH DOLLAR    &kp PERCENT                     &kp AMPERSAND                       &tap_left  &tap_down  &tap_right
+&trans                        &tap_mid_text  &kp NUMBER_1                  &kp NUMBER_2            &kp NUMBER_3              &tap_equal                 &tap_calcu    &tap_row_colum_group          &mt EQUAL EXCLAMATION   &kp DOUBLE_QUOTES               &kp POUND                           &trans     &trans     &mt (LA(F4)) LC(W)
+&mt (LEFT_CONTROL) LC(X)      &trans         &mt LC(KP_NUMBER_0) NUMBER_0  &double_zero            &mt COMMA DOT             &trans                     &trans        &tap_colum                    &tap_row                                                                                               &kp F12    &tap_num_enter
             >;
         };
 
